@@ -1,17 +1,25 @@
 <%= stylesheet_link_tag "home.css" %>
 <div class="container">
-    <h1>Brigadeiros Livre</h1>
+    <div class="title-box">
+        <h1>Brigadeiros Livre</h1>
+        <a href="/cart" class="cart">
+            <span class="cart-size"><%= @cart.size %></span>
+            <span class="cart-price"><%= brl(@cart.price) %></span>
+        </a>
+    </div>
     <span>Exibindo <%= @candies.length %> doces</span>
     <div class="candies-grid">
         <% @candies.each do |candy| %>
-            <div class="candy-box">
+            <form class="candy-box" method="POST" action="/carts/add">
+                <input type="hidden" name="quantity" value="1" />
+                <input type="hidden" name="candy_id" value="<%= candy.id %>" />
                 <h3 class="name"><%= candy.name %></h3>
                 <p class="description"><%= candy.description %></p>
-                <span class="price"><%= number_to_currency(candy.price, unit: 'R$ ', separator: ",", delimiter: "") %></span>
-                <div>
-                    <button class="button">Adicionar no carrinho</button>
+                <div class="price-box">
+                    <span class="price"><%= brl(candy.price) %></span>
+                    <button type="submit" class="button">Adicionar no carrinho</button>
                 </div>
-            </div>
+            </form>
         <% end %>
     </div>
 </div>

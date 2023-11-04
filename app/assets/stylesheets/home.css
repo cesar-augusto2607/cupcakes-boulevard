@@ -15,6 +15,50 @@
     border-radius: 10px;
 }
 
+.title-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart {
+    background-color: lightblue;
+    padding: 0.5rem;
+    border-radius: 10px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.cart-size {
+    font-weight: bold;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: steelblue;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: whitesmoke;
+}
+
+.cart-price {
+    font-size: 1.5rem;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .candy-box .name {
 
 }
@@ -24,7 +68,7 @@
 }
 
 .candy-box .price {
-    
+    font-size: 1.5rem;    
 }
 
 .candy-box .button {
@@ -34,5 +78,4 @@
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
-    margin-top: 1rem;
 }
