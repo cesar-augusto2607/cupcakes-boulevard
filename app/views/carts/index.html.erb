@@ -1,0 +1,8 @@
+<div>
+    <h1>Carrinho</h1>
+    <% @cart.items.each do |item| %>
+        <div>
+            <h4><%= item.quantity %>x <%= item.candy.name %></h4>
+        </div>
+    <% end %>
+</div>

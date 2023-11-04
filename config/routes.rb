@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/', to: 'home#index'
   post '/carts/add', to: 'carts#add'
+  get '/cart', to: 'carts#index'
 end

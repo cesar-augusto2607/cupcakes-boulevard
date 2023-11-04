@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
     def index
-        items = CartItem.all.includes(:candy)
-        @cart = Cart.new(items)
+        @cart = Cart.current
         @candies = Candy.all
     end
 end
