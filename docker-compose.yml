@@ -1,0 +1,11 @@
+version: '3.0.0'
+
+services:
+  mysqldb:
+    image: mysql:8.2.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=brigadeiros_senha
+    volumes:
+      - ./.dbdata:/var/lib/mysql
+    ports:
+      - 3306:3306

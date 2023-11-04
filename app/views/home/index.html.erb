@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag "home.css" %>
+<div class="container">
+    <h1>Brigadeiros Livre</h1>
+    <span>Exibindo <%= @candies.length %> doces</span>
+    <div class="candies-grid">
+        <% @candies.each do |candy| %>
+            <div class="candy-box">
+                <h3 class="name"><%= candy.name %></h3>
+                <p class="description"><%= candy.description %></p>
+                <span class="price"><%= number_to_currency(candy.price, unit: 'R$ ', separator: ",", delimiter: "") %></span>
+                <div>
+                    <button class="button">Adicionar no carrinho</button>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
