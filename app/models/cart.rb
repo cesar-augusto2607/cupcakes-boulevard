@@ -18,6 +18,17 @@ class Cart
         @items.map(&:price).sum
     end
 
+    def remove(candy_id:)
+        item = CartItem.find_by candy_id: candy_id
+        return if item.nil?
+        if (item.quantity <= 1)
+            item.destroy
+        else
+            item.quantity -= 1
+            item.save
+        end
+    end
+
     def add(candy_id:, quantity:)
         item = CartItem.find_by candy_id: candy_id
         if (item.nil?) 

@@ -1,0 +1,27 @@
+
+.cart-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: lightblue;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.cart-item-price {
+    font-size: 1.4rem;
+}
+
+.cart-item-title {
+    font-size: 1.5rem;
+}
+
+.cart-item-quantity {
+    font-weight: bold;
+}

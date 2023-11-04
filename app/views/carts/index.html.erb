@@ -1,8 +1,35 @@
-<div>
-    <h1>Carrinho</h1>
-    <% @cart.items.each do |item| %>
-        <div>
-            <h4><%= item.quantity %>x <%= item.candy.name %></h4>
-        </div>
-    <% end %>
+<%= stylesheet_link_tag "carts.css" %>
+<div class="container">
+    <div>
+        <h1>Carrinho</h1>
+        <span>Total: <%= brl(@cart.price) %></span>
+    </div>
+    <div class="cart-item-list">
+        <% @cart.items.each do |item| %>
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <div class="cart-item-title">
+                        <span><%= item.candy.name %></span>
+                    </div>
+                    <p><%= item.candy.description %></p>
+                    <div>
+                        <form method="POST" action="/carts/remove">
+                            <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
+                            <button type="submit">
+                                <%= item.quantity == 1 ? 'Excluir' : '-' %>
+                            </button>
+                        </form>
+                        <span><%= item.quantity %></span>
+                        <form method="POST" action="/carts/add">
+                            <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
+                            <button type="submit">+</button>
+                        </form>
+                    </div>
+                    <div class="cart-item-price">
+                        <span><%= brl(item.price) %></span>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
 </div>
