@@ -2,8 +2,9 @@
 <div class="container">
     <div>
         <h1>Carrinho</h1>
-        <span>Total: <%= brl(@cart.price) %></span>
+        <% if (@cart.price > 0) %> <span>Total: <%= brl(@cart.price) %></span> <% end %>
     </div>
+    <% if (@cart.price == 0) %> <span>Nenhum item adicionado</span> <% end %>
     <div class="cart-item-list">
         <% @cart.items.each do |item| %>
             <div class="cart-item">
@@ -12,11 +13,11 @@
                         <span><%= item.candy.name %></span>
                     </div>
                     <p><%= item.candy.description %></p>
-                    <div>
+                    <div class="quantity-control">
                         <form method="POST" action="/carts/remove">
                             <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
-                            <button type="submit">
-                                <%= item.quantity == 1 ? 'Excluir' : '-' %>
+                            <button type="submit" class="remove">
+                                <%= item.quantity == 1 ? 'EXCLUIR' : '-' %>
                             </button>
                         </form>
                         <span><%= item.quantity %></span>
@@ -26,10 +27,17 @@
                         </form>
                     </div>
                     <div class="cart-item-price">
-                        <span><%= brl(item.price) %></span>
+                        <span><%= brl(item.candy.price) %></span>
                     </div>
                 </div>
             </div>
+        <% end %>
+    </div>
+    <div class="">
+        <% if (@cart.items.length > 0) %>
+            <form method="POST" action="/orders">
+                <button>Fechar Pedido</button>
+            </form>
         <% end %>
     </div>
 </div>

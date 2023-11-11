@@ -25,3 +25,25 @@
 .cart-item-quantity {
     font-weight: bold;
 }
+
+.quantity-control {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin: 0.5rem 0;   
+}
+
+.quantity-control button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+}
+
+.quantity-control button.remove {
+    color: red;
+}
+
+.quantity-control button:hover {
+    cursor: pointer;
+}

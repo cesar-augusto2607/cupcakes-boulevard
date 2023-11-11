@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_04_161142) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_04_234303) do
   create_table "candies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -25,6 +25,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_04_161142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["candy_id"], name: "index_cart_items_on_candy_id"
+  end
+
+  create_table "order_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.decimal "candy_price", precision: 10, scale: 2
+    t.string "name"
+    t.string "description"
+    t.integer "quantity"
+    t.bigint "candy_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candy_id"], name: "index_order_items_on_candy_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
+  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
