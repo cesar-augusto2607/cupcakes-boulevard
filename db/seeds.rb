@@ -11,3 +11,4 @@ Candy.create(name: 'Capecake Chocolate', description: 'Um capecake de chocolate 
 Candy.create(name: 'Capecake Doce de Leito', description: 'Um capecake de doce de leite muito bom', price: 5)
 Candy.create(name: 'Beijinho', description: 'Beijinho bom', price: 1.5)
 Candy.create(name: 'Torta de limão', description: 'Uma deliciosa torta de limão', price: 5.8)
+User.create(name: 'César Augusto', email: 'cesar@gmail.com', password: '123456')

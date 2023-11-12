@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <div>
+      <%= is_anonymous? ? 'Anônimo' : current_user.name %>
+      <% if is_logged_in? %>
+        <form method="POST" action="/logout">
+          <button type="submit">Logout</button>
+        </form>
+      <% end %>
+      <% if is_anonymous? %>
+        <a href="/entrar">Entrar</a>
+      <% end %>
+      <% if is_anonymous? %>
+        <a href="/criar_conta">Criar conta</a>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

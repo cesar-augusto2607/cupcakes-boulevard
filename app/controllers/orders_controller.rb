@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
+    before_action :require_login
+    
     def create
         ActiveRecord::Base.transaction do 
-            cart = Cart.current
-            order = Order.create
+            order = Order.create(user_id: current_user.id)
             order_items = cart.items.map { |cart_item| order.create_item_from cart_item }
             order.order_items << order_items
             cart.clear
@@ -11,6 +12,6 @@ class OrdersController < ApplicationController
     end
 
     def index 
-        @orders = Order.all
+        @orders = Order.for(current_user).all
     end
 end

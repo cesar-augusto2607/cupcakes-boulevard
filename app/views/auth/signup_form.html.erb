@@ -1,0 +1,9 @@
+<div>
+    <form method="POST" action="/signup">
+        <input name="name" placeholder="Nome" />
+        <input name="email" placeholder="Email" />
+        <input name="password" placeholder="Senha" />
+        <button type="submit">Criar conta</button>
+        <% if flash[:notice] %> <span><%= flash[:notice] %></span> <% end %>
+    </form>
+</div>

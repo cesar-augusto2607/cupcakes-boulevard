@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   get '/', to: 'home#index'
   get '/carrinho', to: 'carts#index'
   get '/pedidos', to: 'orders#index'
+  get '/entrar', to: 'auth#login_form'
+  get '/criar_conta', to: 'auth#signup_form'
 
   post '/carts/add', to: 'carts#add'
   post '/carts/remove', to: 'carts#remove'
   post '/orders', to: 'orders#create'
+  post '/login', to: 'auth#login'
+  post '/logout', to: 'auth#logout'
+  post '/signup', to: 'auth#signup'
 end

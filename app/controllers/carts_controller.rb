@@ -1,12 +1,11 @@
 class CartsController < ApplicationController
     def index
-        @cart = Cart.current
+        @cart = cart
     end
     
     def add
         candy = Candy.find_by id: params_for_add[:candy_id]
         return head :not_found if candy.nil?
-        cart = Cart.current
         cart.add **params_for_add
         redirect_to request.referrer
     end
@@ -14,7 +13,6 @@ class CartsController < ApplicationController
     def remove
         candy = Candy.find_by id: params_for_remove[:candy_id]
         return head :not_found if candy.nil?
-        cart = Cart.current
         cart.remove **params_for_remove
         redirect_to request.referrer
     end
