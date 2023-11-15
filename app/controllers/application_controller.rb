@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
         end
 
         def create_for(user)
+            @session.delete(:anonymous_id) unless @session[:anonymous_id].nil?
             @session[:user_id] = user.id
         end
     end

@@ -17,4 +17,82 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ddd;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem 12rem;
+    background-color: lightblue;
+    justify-content: space-between;
+    box-shadow: 0px 1px 2px #aaa;
+}
+
+.nav-item {
+    color: #333;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-account-info {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.logout-item {
+    font-size: 0.8rem;
+}
+
+.cart-box {
+    display: flex;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.nav-separator {
+    margin: 0 0.5rem;
+}
+
+.cart-size {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    font-size: 0.8rem;
+    background-color: red;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-box {
+    color: #333;
+}
+
+.nav-bar form {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.nav-bar form button[type=submit]:hover {
+    cursor: pointer;
 }

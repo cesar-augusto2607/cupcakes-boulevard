@@ -1,5 +1,6 @@
 class AuthController < ApplicationController
     def login_form
+        @paths_to_ignore_navbar = ['/entrar']
     end
 
     def login
@@ -16,8 +17,7 @@ class AuthController < ApplicationController
 
         if is_anonymous?
             cart.move_to(user)
-            session.delete(:anonymous_id)
-            session[:user_id] = user.id
+            session_manager.create_for(user)
             reload_cart
         end
 

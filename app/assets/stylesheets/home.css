@@ -1,74 +1,74 @@
 .container {
-    padding: 2rem;
+    padding: 2rem 12rem;
 }
 
 .candies-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 1rem;
 }
 
 .candy-box {
-    background-color: lightblue;
+    box-shadow: 1px 1px 3px #aaa;
     padding: 1rem;
     border-radius: 10px;
-}
-
-.title-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.cart {
-    background-color: lightblue;
-    padding: 0.5rem;
-    border-radius: 10px;
-    position: relative;
+    background-color: #fff;
     display: block;
     text-decoration: none;
-    color: #000;
-}
-
-.cart-size {
-    font-weight: bold;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: steelblue;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    color: whitesmoke;
-}
-
-.cart-price {
-    font-size: 1.5rem;
-}
-
-.price-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
 }
 
 .candy-box .name {
-
+    margin: 0.5rem 0;
+    color: #333;
 }
 
 .candy-box .description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+            line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    color: #666;
+}
+
+.candy-image-blurred {
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.candy-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.info-box {
+    padding: 0 1rem;
+}
+
+.candy-image {
+    height: 102%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
 
 }
 
 .candy-box .price {
-    font-size: 1.5rem;    
+    font-size: 2rem;    
+    color: #333;
+    margin-top: 1rem;
 }
 
 .candy-box .button {
