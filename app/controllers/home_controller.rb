@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
+    before_action :use_cart
+    
     def index
-        @cart = cart
         @candies = Candy.all
     end
 end

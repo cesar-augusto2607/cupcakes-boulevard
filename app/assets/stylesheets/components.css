@@ -1,0 +1,15 @@
+
+
+.card {
+    box-shadow: 1px 1px 3px #aaa;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.btn {
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}

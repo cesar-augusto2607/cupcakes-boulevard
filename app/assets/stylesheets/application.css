@@ -96,3 +96,8 @@ body {
 .nav-bar form button[type=submit]:hover {
     cursor: pointer;
 }
+
+.base-container {
+    padding-right: 12rem;
+    padding-left: 12rem;
+}

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/pedidos', to: 'orders#index'
   get '/entrar', to: 'auth#login_form'
   get '/criar_conta', to: 'auth#signup_form'
+  get '/produtos/:slug', to: 'products#show'
 
   post '/carts/add', to: 'carts#add'
   post '/carts/remove', to: 'carts#remove'

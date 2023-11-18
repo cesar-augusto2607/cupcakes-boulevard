@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def use_cart
+        @cart = cart
+    end
+
     def session_manager
         @session_manager ||= SessionManager.new(session)
     end

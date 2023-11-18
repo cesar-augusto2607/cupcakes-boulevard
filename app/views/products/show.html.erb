@@ -1,0 +1,29 @@
+<div class="base-container container-product">
+    <form class="product-form" action="/carts/add" method="POST">
+        <input type="hidden" name="candy_id" value="<%= @candy.id %>" data-quantity-target="quantity" />
+        <div class="card product-info">
+            <div class="image-box">
+                <img src="<%= @candy.image_url %>" />
+            </div>
+            <h1 class="product-title"><%= @candy.name %></h1>
+            <p class="product-price"><%= brl(@candy.price) %></p>
+            <p class="product-description"><%= @candy.description %></p>
+            <div class="product-form-footer">
+                <div class="quantity-box" data-controller="quantity">
+                    <input type="hidden" name="quantity" value="1" data-quantity-target="quantity" />
+                    <button type="button" class="quantity-control control-remove" data-action="click->quantity#decrement">
+                        <i data-feather="minus"></i>
+                    </button>
+                    <span class="unit-box">
+                        <span data-quantity-target="quantityOutput"></span>
+                        Unid.
+                    </span>
+                    <button type="button" class="quantity-control control-add" data-action="click->quantity#increment">
+                        <i data-feather="plus"></i>
+                    </button>
+                </div>
+                <button class="btn add-cart-button">Adicionar no carrinho</button>
+            </div>
+        </div>
+    </form>
+</div>
