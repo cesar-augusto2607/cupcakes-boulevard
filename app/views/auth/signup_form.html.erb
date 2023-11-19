@@ -1,9 +1,13 @@
-<div>
-    <form method="POST" action="/signup">
-        <input name="name" placeholder="Nome" />
-        <input name="email" placeholder="Email" />
-        <input name="password" placeholder="Senha" />
-        <button type="submit">Criar conta</button>
+<div class="signup-form-container">
+    <form class="card" method="POST" action="/signup">
+        <h1>Crie uma conta</h1>
+        <input name="name" placeholder="Nome" class="input" required />
+        <input name="email" placeholder="Email" class="input" required />
+        <input name="password" placeholder="Senha" type="password" class="input" required />
+        <button type="submit" class="btn">Criar conta</button>
         <% if flash[:notice] %> <span><%= flash[:notice] %></span> <% end %>
+        <div class="signup-footer">
+            <a href="/entrar">Já possui conta?</a>
+        </div>
     </form>
 </div>

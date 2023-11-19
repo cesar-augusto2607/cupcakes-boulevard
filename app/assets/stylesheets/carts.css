@@ -2,7 +2,7 @@
 .cart-item-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .cart-item {

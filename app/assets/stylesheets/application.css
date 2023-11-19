@@ -85,7 +85,7 @@ body {
 }
 
 .nav-bar form {
-    height: fit-content;
+    display: none;
 }
 
 .nav-bar form button[type=submit]:hover {
@@ -113,7 +113,6 @@ body {
     justify-content: end;
     align-items: center;
     gap: 1rem;
-    margin-top: -2px;
 }
 
 .logged-item {

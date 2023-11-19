@@ -1,0 +1,46 @@
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-form-container h1 {
+    text-align: center;
+    color: steelblue;
+}
+
+.login-form-container a {
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.login-form-container a:hover {
+    text-decoration: underline;
+}
+
+
+.login-form-container form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-form-container form button {
+    background-color: steelblue;
+    color: #fff;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.error-message {
+    color: rgb(235, 125, 125);
+}
+
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+}

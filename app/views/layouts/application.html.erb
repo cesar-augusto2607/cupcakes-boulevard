@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <% if (@paths_to_ignore_navbar.nil? || !@paths_to_ignore_navbar.include?(request.path)) %>
+    <% unless (@cart.nil?) %>
       <div class="nav-bar">
         <a href="/" class="logo">
           <h1>Cupcakes Boulevard</h1>
@@ -37,10 +37,10 @@
           
           <% if is_logged_in? %>
             <div class="logged-infos">
-              <a href="/pedidos" class="nav-item  logged-item">Pedidos</a>
-              <form method="POST" action="/logout">
-                <button class="nav-item logged-item" type="submit">Sair</button>
+              <a href="/pedidos" class="nav-item logged-item">Pedidos</a>
+              <form method="POST" action="/logout" id="form-logout">
               </form>
+              <button form="form-logout" class="nav-item logged-item" type="submit" >Sair</button>
             </div>
           <% end %>
         

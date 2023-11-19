@@ -1,8 +1,13 @@
-<div>
-    <form method="POST" action="/login">
-        <input name="email" placeholder="Email" />
-        <input name="password" placeholder="Senha" />
-        <button type="submit">Login</button>
-        <% if flash[:notice] %> <span><%= flash[:notice] %></span> <% end %>
+<div class="login-form-container">
+    <form method="POST" action="/login" class="card">
+        <h1>Acesse sua conta</h1>
+        <input name="email" placeholder="Email" required class="input" />
+        <input name="password" placeholder="Senha" type="password" required class="input" />
+        <button type="submit" class="btn">Entrar</button>
+        <% if flash[:notice] %> <span class="error-message"><%= flash[:notice] %></span> <% end %>
+
+        <div class="login-footer">
+            <a href="/criar_conta">Criar conta</a>
+        </div>
     </form>
 </div>

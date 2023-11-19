@@ -1,17 +1,17 @@
 class AuthController < ApplicationController
     def login_form
-        @paths_to_ignore_navbar = ['/entrar']
+        
     end
 
     def login
         user = User.find_by email: params[:email]
         if user.nil?
-            flash[:notice] = 'Senha incorreta'
+            flash[:notice] = 'Conta não encontrada. Verifique seu email!'
             return redirect_back fallback_location: '/entrar'
         end
 
         if !user.authenticate(params[:password])
-            flash[:notice] = 'Senha incorreta'
+            flash[:notice] = 'Senha incorreta! Tente novamente.'
             return redirect_back fallback_location: '/entrar'
         end
 

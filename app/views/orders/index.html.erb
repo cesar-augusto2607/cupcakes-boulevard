@@ -1,18 +1,19 @@
 <div class="container">
-    <div class="title-box">
-        <h1>Pedidos</h1>
-    </div>
-    <% if (@orders.length > 0) %>
-        <span>Exibindo <%= @orders.length %> pedidos</span>
-    <% end %>
+    <h1>Pedidos</h1>
     <% if (@orders.length == 0) %>
-        <span>Nenhum pedido realizado</span>
+        <span class="no-orders">Nenhum pedido realizado</span>
     <% end %>
-    <% @orders.each do |order| %>
-        <h3>Pedido N <%= order.id %> feito em <%= order.created_at %></h3>
-        <% order.order_items.each do |item| %>
-            <div><%= item.quantity %>x <%= item.name %> <%= brl(item.candy_price) %></div>
+    <div class="orders-list">
+        <% @orders.each do |order| %>
+            <div class="card">
+                <span class="order-title">Pedido Nº <%= order.id %> feito em <%= order.created_at.in_time_zone('America/Sao_Paulo').strftime("%d/%m/%Y às %H:%M") %></span>
+                <div class="order-items">
+                    <% order.order_items.each do |item| %>
+                        <div class="order-item"><%= item.quantity %>x <%= item.name %> <%= brl(item.quantity * item.candy_price) %></div>
+                    <% end %>
+                </div>
+                <span class="order-total">Total: <%= brl(order.total) %></span>
+            </div>
         <% end %>
-        <span><%= brl(order.total) %></span>
-    <% end %>
+    </div>
 </div>
