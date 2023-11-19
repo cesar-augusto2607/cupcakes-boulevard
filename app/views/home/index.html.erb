@@ -3,7 +3,7 @@
     <span>Exibindo <%= @candies.length %> doces</span>
     <div class="candies-grid">
         <% @candies.each do |candy| %>
-            <a href="/produtos/<%= candy.slug  %>" class="candy-box">
+            <a href="/produtos/<%= candy.slug  %>" class="card candy-box">
                 <input type="hidden" name="quantity" value="1" />
                 <input type="hidden" name="candy_id" value="<%= candy.id %>" />
                 <div class="candy-image-container">

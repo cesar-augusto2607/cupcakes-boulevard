@@ -1,0 +1,13 @@
+<div class="quantity-box" data-controller="quantity">
+    <input type="hidden" name="quantity" value="1" data-quantity-target="quantity" />
+    <button type="button" class="quantity-control control-remove" data-action="click->quantity#decrement">
+        <i data-feather="minus"></i>
+    </button>
+    <span class="unit-box">
+        <span data-quantity-target="quantityOutput"></span>
+        Unid.
+    </span>
+    <button type="button" class="quantity-control control-add" data-action="click->quantity#increment">
+        <i data-feather="plus"></i>
+    </button>
+</div>

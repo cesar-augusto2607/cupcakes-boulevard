@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_144729) do
   create_table "order_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.decimal "candy_price", precision: 10, scale: 2
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.integer "quantity"
     t.bigint "candy_id"
     t.bigint "order_id"

@@ -20,7 +20,7 @@
 }
 
 .image-box img {
-    height: 100%;
+    max-height: 400px;
 }
 
 .container {
@@ -55,6 +55,14 @@
     background-color: steelblue;
     color: #fff;
     margin-left: 1rem;   
+    align-items: center;
+    display: flex;
+}
+
+.add-cart-button .icon {
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .quantity-box {
@@ -86,4 +94,8 @@
 
 .unit-box {
     padding: 0 2rem;
+}
+
+.item-added {
+    background-color: green;
 }

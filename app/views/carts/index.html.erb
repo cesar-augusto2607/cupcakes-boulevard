@@ -1,43 +1,31 @@
 <%= stylesheet_link_tag "carts.css" %>
 <div class="container">
-    <div>
-        <h1>Carrinho</h1>
-        <% if (@cart.price > 0) %> <span>Total: <%= brl(@cart.price) %></span> <% end %>
-    </div>
-    <% if (@cart.price == 0) %> <span>Nenhum item adicionado</span> <% end %>
+    <h1>Carrinho</h1>
+    <% if (@cart.price == 0) %> <span class="no-items">Nenhum item adicionado</span> <% end %>
+    <% if (@cart.price > 0) %> 
+        <div class="card cart-summary">
+            <span class="cart-total">Total: <%= brl(@cart.price) %></span> 
+            <% if (@cart.items.length > 0) %>
+                <form method="POST" action="/orders" >
+                    <button class="btn close-cart-btn">Fechar Pedido</button>
+                </form>
+            <% end %>
+        </div>
+    <% end %>
     <div class="cart-item-list">
         <% @cart.items.each do |item| %>
-            <div class="cart-item">
+            <div class="card cart-item">
+                <img class="cart-item-image" src="<%= item.candy.image_url %>" />
                 <div class="cart-item-info">
                     <div class="cart-item-title">
                         <span><%= item.candy.name %></span>
                     </div>
-                    <p><%= item.candy.description %></p>
-                    <div class="quantity-control">
-                        <form method="POST" action="/carts/remove">
-                            <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
-                            <button type="submit" class="remove">
-                                <%= item.quantity == 1 ? 'EXCLUIR' : '-' %>
-                            </button>
-                        </form>
-                        <span><%= item.quantity %></span>
-                        <form method="POST" action="/carts/add">
-                            <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
-                            <button type="submit">+</button>
-                        </form>
-                    </div>
+                    <p class="cart-item-description"><%= item.candy.description %></p>
                     <div class="cart-item-price">
-                        <span><%= brl(item.candy.price) %></span>
+                        <span><%= item.quantity %>x <%= brl(item.candy.price) %></span>
                     </div>
                 </div>
             </div>
-        <% end %>
-    </div>
-    <div class="">
-        <% if (@cart.items.length > 0) %>
-            <form method="POST" action="/orders">
-                <button>Fechar Pedido</button>
-            </form>
         <% end %>
     </div>
 </div>

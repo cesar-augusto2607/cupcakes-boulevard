@@ -54,9 +54,6 @@ body {
 }
 
 
-.logout-item {
-    font-size: 0.8rem;
-}
 
 .cart-box {
     display: flex;
@@ -88,9 +85,7 @@ body {
 }
 
 .nav-bar form {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
+    height: fit-content;
 }
 
 .nav-bar form button[type=submit]:hover {
@@ -100,4 +95,27 @@ body {
 .base-container {
     padding-right: 12rem;
     padding-left: 12rem;
+}
+
+.size-18 {
+    width: 18px;
+    height: 18px;
+}
+
+.logo {
+    color: #333;
+    text-decoration: none;
+}
+
+.logged-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+    margin-top: -2px;
+}
+
+.logged-item {
+    font-size: 0.8rem;
 }

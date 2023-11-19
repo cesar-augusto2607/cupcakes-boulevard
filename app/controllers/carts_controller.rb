@@ -7,6 +7,7 @@ class CartsController < ApplicationController
         candy = Candy.find_by id: params_for_add[:candy_id]
         return head :not_found if candy.nil?
         cart.add **params_for_add
+        flash[:item_added] = true
         redirect_to request.referrer
     end
 

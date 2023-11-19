@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-    before_action :require_login
+    before_action :require_login, :use_cart
     
     def create
         ActiveRecord::Base.transaction do 
