@@ -99,3 +99,22 @@
 .item-added {
     background-color: green;
 }
+
+.review-form {
+    margin-top: 1rem;
+}
+
+.stars-list {
+    display: flex;
+}
+
+.review-form input[name="rating_text"] {
+    width: 100%;
+}
+
+.review-form-stars-line {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}

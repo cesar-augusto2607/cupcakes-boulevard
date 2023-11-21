@@ -14,6 +14,11 @@
     border-radius: 5px;
 }
 
+.primary {
+    background-color: steelblue;
+    color: #fff;
+}
+
 .btn:hover {
     cursor: pointer;
 }
@@ -22,5 +27,12 @@
     border: 1px solid #999;
     padding: 1rem;
     font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.input-small {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    font-size: 1rem;
     border-radius: 5px;
 }

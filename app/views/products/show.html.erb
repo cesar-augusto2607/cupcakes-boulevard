@@ -21,4 +21,24 @@
             </div>
         </div>
     </form>
+    <% if is_logged_in? %>
+        <form class="card review-form" method="POST" action="/candies/<%= @candy.id %>/reviews">
+            <% if @user_review %>
+                <input name="user_id" type="hidden" value="<%= @user_review.user_id %>" />
+            <% end %>
+            <div class="review-form-stars-line">
+                <div data-controller="stars" class="stars-list">
+                    <input data-stars-target="ratingInput" name="rating" type="hidden" max="5" min="1" value="1" />
+                    <% 5.times do |index| %>
+                        <div data-star-rating="<%= index + 1 %>" data-action="click->stars#setStar">
+                            <i data-feather="star" data-stars-target="starItem" fill="#ffca28" stroke="#ffca28"></i>
+                        </div>
+                    <% end %>
+                </div>
+                <button type="submit" class="btn primary">Enviar</button>
+            </div>
+            <input name="rating_text" placeholder="O que você tem a dizer do produto? (Opcional)" class="input-small" />
+        </form>
+    <% end %>
+    <% if @reviews.length == 0 %> <span>Esse produto não possui nenhuma avaliação</span> <% end %>
 </div>

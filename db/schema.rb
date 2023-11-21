@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_12_144729) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_20_232811) do
   create_table "candies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -52,6 +52,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_144729) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "candy_id"
+    t.integer "rating"
+    t.text "rating_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candy_id"], name: "index_reviews_on_candy_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
