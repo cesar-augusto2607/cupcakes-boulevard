@@ -4,7 +4,7 @@ services:
   mysqldb:
     image: mysql:8.2.0
     environment:
-      - MYSQL_ROOT_PASSWORD=brigadeiros_senha
+      - MYSQL_ROOT_PASSWORD=cupcakes_boulevard_senha
     volumes:
       - ./.dbdata:/var/lib/mysql
     ports:

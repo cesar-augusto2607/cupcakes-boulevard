@@ -12,6 +12,16 @@
     margin: 1rem 0;
 }
 
+.product-stars {
+    display: flex;
+    gap: 0.3rem
+}
+
+.product-stars .rating-value {
+    color: #999;
+    font-size: 0.9rem;
+}
+
 .image-box {
     display: flex;
     flex-direction: column;
@@ -117,4 +127,32 @@
     margin-bottom: 1rem;
     justify-content: space-between;
     align-items: center;
+}
+
+.no-reviews {
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.reviews {
+    margin-top: 1rem;
+}
+
+.reviews .title {
+    margin-bottom: 1rem;
+}
+
+.reviews .review-text {
+    color: #333;
+    font-size: 1rem;
+}
+
+.reviews .review-user {
+    color: #777;
+    font-weight: bold;
+}
+
+.divider {
+    margin: 0.5rem 0;
 }

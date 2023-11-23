@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
     def review_of(candy)
         id = (candy.is_a? Numeric) ? candy : candy.id
-        reviews.where(candy_id: id).first
+        reviews.where(candy_id: id, user_id: self.id).first
     end
 end

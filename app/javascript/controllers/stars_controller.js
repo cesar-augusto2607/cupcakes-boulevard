@@ -4,7 +4,7 @@ export default class extends Controller {
     static targets = ['starItem', 'ratingInput']
 
     initialize() {
-        this.value = 1 
+        this.value = Number(this.ratingInputTarget.value)
     }
 
     connect() {

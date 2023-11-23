@@ -1,0 +1,3 @@
+<% unless flash[key].nil? %>
+    <span data-flash-toast="<%= key %>" data-flash-toast-type="success" style="display: hidden;"><%= flash[key] %></span>
+<% end %>

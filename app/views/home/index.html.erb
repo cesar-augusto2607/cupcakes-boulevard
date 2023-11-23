@@ -12,6 +12,7 @@
                 </div>
                 <div class="info-box">
                     <h3 class="name"><%= candy.name %></h3>
+                    <%= render partial: "application/stars-list", locals: { rating_value: candy.rating } %>
                     <span class="price"><%= brl(candy.price) %></span>
                     <p class="description"><%= candy.description %></p>
                 </div>

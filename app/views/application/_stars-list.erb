@@ -1,0 +1,5 @@
+<div class="stars-list">
+    <% 5.times do |index| %>
+        <i data-feather="star" fill="<%= index + 1 <= rating_value ? '#ffca28' : 'transparent' %>" stroke="#ffca28"></i>
+    <% end %>
+</div>

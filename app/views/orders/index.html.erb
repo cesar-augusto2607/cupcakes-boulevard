@@ -6,7 +6,7 @@
     <div class="orders-list">
         <% @orders.each do |order| %>
             <div class="card">
-                <span class="order-title">Pedido Nº <%= order.id %> feito em <%= order.created_at.in_time_zone('America/Sao_Paulo').strftime("%d/%m/%Y às %H:%M") %></span>
+                <span class="order-title">Pedido Nº <%= order.id %> feito em <%= friendly_date_time(order.created_at) %></span>
                 <div class="order-items">
                     <% order.order_items.each do |item| %>
                         <div class="order-item"><%= item.quantity %>x <%= item.name %> <%= brl(item.quantity * item.candy_price) %></div>

@@ -8,7 +8,6 @@ export default class AddCartButtonControler extends Controller {
     }
 
     connect() {
-        console.log(this.hasAddedValue)
         if (this.hasAddedValue) {
             this.element.classList.add('item-added')
             this.timeout = setTimeout(() => {

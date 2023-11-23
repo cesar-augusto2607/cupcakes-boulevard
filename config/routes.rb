@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/produtos/:slug', to: 'products#show'
 
   post '/carts/add', to: 'carts#add'
+  post '/reviews', to: 'reviews#create'
   post '/carts/remove', to: 'carts#remove'
   post '/orders', to: 'orders#create'
   post '/login', to: 'auth#login'
