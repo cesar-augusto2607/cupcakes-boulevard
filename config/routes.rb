@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/entrar', to: 'auth#login_form'
   get '/criar_conta', to: 'auth#signup_form'
   get '/produtos/:slug', to: 'products#show'
+  get '/busca', to: 'search#index'
 
   post '/carts/add', to: 'carts#add'
   post '/reviews', to: 'reviews#create'
@@ -17,4 +18,6 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#login'
   post '/logout', to: 'auth#logout'
   post '/signup', to: 'auth#signup'
+  post '/search', to: 'search#redirect'
+
 end

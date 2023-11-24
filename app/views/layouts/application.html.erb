@@ -19,33 +19,37 @@
   <body>
     <% unless (@cart.nil?) %>
       <div class="nav-bar">
-        <a href="/" class="logo">
-          <h1>Cupcakes Boulevard</h1>
-        </a>
-        <div class="nav-right">
-          <div class="nav-account-info">
-            <a href="/carrinho" class="cart-box">
-              <div class="cart-size"><%= @cart.size %></div>
-              <i data-feather="shopping-cart"></i>
-            </a>
-            <span class="nav-item"><%= "Olá, #{current_user.name}!" if is_logged_in? %></span>
-            <% if is_anonymous? %>
-              <a href="/entrar" class="nav-item enter-item">Entrar</a>
-              <span class="nav-separator">|</span>
-              <a href="/criar_conta" class="nav-item">Criar conta</a>
+        <div class="nav-bar-row">
+          <a href="/" class="logo">
+            <h1>Cupcakes Boulevard</h1>
+          </a>
+          <div class="nav-right">
+            <div class="nav-account-info">
+              <a href="/carrinho" class="cart-box">
+                <div class="cart-size"><%= @cart.size %></div>
+                <i data-feather="shopping-cart"></i>
+              </a>
+              <span class="nav-item"><%= "Olá, #{current_user.name}!" if is_logged_in? %></span>
+              <% if is_anonymous? %>
+                <a href="/entrar" class="nav-item enter-item">Entrar</a>
+                <span class="nav-separator">|</span>
+                <a href="/criar_conta" class="nav-item">Criar conta</a>
+              <% end %>
+            </div>
+            
+            <% if is_logged_in? %>
+              <div class="logged-infos">
+                <a href="/pedidos" class="nav-item logged-item">Pedidos</a>
+                <form method="POST" action="/logout" id="form-logout" id="logout-form">
+                </form>
+                <button form="form-logout" class="nav-item logged-item" type="submit" >Sair</button>
+              </div>
             <% end %>
           </div>
-          
-          <% if is_logged_in? %>
-            <div class="logged-infos">
-              <a href="/pedidos" class="nav-item logged-item">Pedidos</a>
-              <form method="POST" action="/logout" id="form-logout">
-              </form>
-              <button form="form-logout" class="nav-item logged-item" type="submit" >Sair</button>
-            </div>
-          <% end %>
-        
         </div>
+        <form method="POST" action="/search" class="search-form">
+          <input placeholder="Pesquisa..." class="input-small" name="term" />
+        </form>
       </div>
     <% end %>
     <%= yield %>
