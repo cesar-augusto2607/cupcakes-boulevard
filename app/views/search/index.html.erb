@@ -1,1 +1,12 @@
-<span><%= @candies.length %> cupcakes</span>
+<div class="search-container base-container">
+    <% if @candies.length == 0 %>
+        <span>Nenhum cupcake encontrado</span>
+    <% else %>
+        <span><%= @candies.length %> cupcake<%= @candies.length > 1 ? 's' : '' %> encontrado</span>
+    <% end %>
+    <div class="search-grid">
+        <% @candies.each do |candy| %>
+            <%= render partial: "application/candy_card", locals: { candy: candy } %>
+        <% end %>
+    </div>
+</div>

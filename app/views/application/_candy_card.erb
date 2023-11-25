@@ -1,0 +1,14 @@
+<a href="/produtos/<%= candy.slug  %>" class="card candy-box">
+    <input type="hidden" name="quantity" value="1" />
+    <input type="hidden" name="candy_id" value="<%= candy.id %>" />
+    <div class="candy-image-container">
+        <!-- <div class="candy-image-blurred" style="background-image: url('<%= candy.image_url %>');"></div> -->
+        <img src="<%= candy.image_url %>" class="candy-image" />
+    </div>
+    <div class="info-box">
+        <h3 class="name"><%= candy.name %></h3>
+        <%= render partial: "application/stars-list", locals: { rating_value: candy.rating } %>
+        <span class="price"><%= brl(candy.price) %></span>
+        <p class="description"><%= candy.description %></p>
+    </div>
+</a>
