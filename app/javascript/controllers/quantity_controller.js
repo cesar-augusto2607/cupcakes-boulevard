@@ -4,7 +4,7 @@ export default class extends Controller {
     static targets = ['quantity', 'quantityOutput']
 
     initialize() {
-        this.quantity = 1
+        this.quantity = Number(this.quantityTarget.value) || 1
         this.#updateTargets()
     }
 

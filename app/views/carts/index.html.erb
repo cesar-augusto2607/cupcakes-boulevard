@@ -24,6 +24,27 @@
                     <div class="cart-item-price">
                         <span><%= item.quantity %>x <%= brl(item.candy.price) %></span>
                     </div>
+                    <div class="quantity-box">
+                        <form action="/carts/remove" method="POST">
+                            <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
+                            <button type="submit" class="quantity-control control-remove">
+                                <% if (item.quantity > 1) %>
+                                    <i data-feather="minus"></i>
+                                <% else %>
+                                    <span>Excluir</span>
+                                <% end %>
+                            </button>
+                        </form>
+                        <span class="unit-box">
+                            <%= item.quantity %> Unid.
+                        </span>
+                        <form action="/carts/add" method="POST">
+                            <input type="hidden" name="candy_id" value="<%= item.candy.id %>" />
+                            <button type="submit" class="quantity-control control-add">
+                                <i data-feather="plus"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         <% end %>

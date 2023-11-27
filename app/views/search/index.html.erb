@@ -1,6 +1,6 @@
 <div class="search-container base-container">
     <% if @candies.length == 0 %>
-        <span>Nenhum cupcake encontrado</span>
+        <span>Nenhum cupcake encontrado com a pesquisa "<%= params[:termo] %>"</span>
     <% else %>
         <span><%= @candies.length %> cupcake<%= @candies.length > 1 ? 's' : '' %> encontrado</span>
     <% end %>
