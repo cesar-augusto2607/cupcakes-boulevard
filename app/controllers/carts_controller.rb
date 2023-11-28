@@ -15,6 +15,7 @@ class CartsController < ApplicationController
         candy = Candy.find_by id: params_for_remove[:candy_id]
         return head :not_found if candy.nil?
         cart.remove **params_for_remove
+        flash[:item_removed] = true
         redirect_to request.referrer
     end
 

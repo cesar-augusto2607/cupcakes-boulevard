@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag "carts.css" %>
 <div class="container">
+    <%= toast_message "Item adicionado" if flash[:item_added] == true  %>
+    <%= toast_message "Item removido" if flash[:item_removed] == true  %>
     <h1>Carrinho</h1>
     <% if (@cart.price == 0) %> <span class="no-items">Nenhum item adicionado</span> <% end %>
     <% if (@cart.price > 0) %> 

@@ -1,5 +1,5 @@
 <div class="base-container container-product">
-    <%= render partial: "flash_toast", locals: {key: :review_feedback} %>
+    <%= flash_toast :review_feedback %>
     <form class="product-form" action="/carts/add" method="POST">
         <input type="hidden" name="candy_id" value="<%= @candy.id %>" data-quantity-target="quantity" />
         <div class="card product-info">

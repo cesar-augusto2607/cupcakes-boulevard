@@ -10,4 +10,12 @@ module ApplicationHelper
     def fixed_number(value)
         '%.1f' % value
     end
+
+    def flash_toast(key)
+        render partial: "application/flash_toast", locals: { key: key } 
+    end
+
+    def toast_message(message)
+        render partial: "application/flash_toast", locals: { message: message} 
+    end
 end
