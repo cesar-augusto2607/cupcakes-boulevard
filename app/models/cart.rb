@@ -36,7 +36,12 @@ class Cart
     end
 
     def clear
-        CartItem.delete_all
+        if  is_anonymous?
+            CartItem.where(anonymous_id: @anonymous_id).delete_all()
+        else
+            CartItem.where(user_id: @user.id).delete_all()
+        end
+        @items = []
     end
 
     def is_anonymous?
@@ -66,10 +71,10 @@ class Cart
         end
     end
 
-    def move_to(user)
-        @items.transaction do 
-            @items.each do |item|
-                item.update(anonymous_id: nil, user_id: user.id)
+    def add_items(items)
+        order = ActiveRecord::Base.transaction do 
+            items.each do |item|
+                self.add(candy_id: item.candy_id, quantity: item.quantity)
             end
         end
     end

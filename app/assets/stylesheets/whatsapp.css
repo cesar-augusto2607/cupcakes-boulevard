@@ -1,0 +1,33 @@
+.whatsapp-checkout-container {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;;
+    background-color: #25D366;
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.whatsapp-button:active {
+    color: white;
+}
+
+.items-list {
+    color: #777;
+    margin: 1rem 0;
+}
+
+.items-list:last-child {
+    font-weight: bold;
+}

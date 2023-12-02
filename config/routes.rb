@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/criar_conta', to: 'auth#signup_form'
   get '/produtos/:slug', to: 'products#show'
   get '/busca', to: 'search#index'
+  get '/checkout_whatsapp/:order_id', to: 'checkouts#whatsapp'
 
   post '/carts/add', to: 'carts#add'
   post '/reviews', to: 'reviews#create'

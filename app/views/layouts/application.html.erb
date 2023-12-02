@@ -42,13 +42,13 @@
                 <a href="/pedidos" class="nav-item logged-item">Pedidos</a>
                 <form method="POST" action="/logout" id="form-logout" id="logout-form">
                 </form>
-                <button form="form-logout" class="nav-item logged-item" type="submit" >Sair</button>
+                <button form="form-logout" class="nav-item logged-item logged-item-pointer" type="submit" >Sair</button>
               </div>
             <% end %>
           </div>
         </div>
         <form method="POST" action="/search" class="search-form">
-          <input placeholder="Pesquisa..." class="input-small" name="term" />
+          <input placeholder="Pesquisa..." value="<%= params[:termo] %>" class="input-small" name="term" />
         </form>
       </div>
     <% end %>

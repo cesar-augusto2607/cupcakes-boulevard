@@ -16,9 +16,10 @@ class AuthController < ApplicationController
         end
 
         if is_anonymous?
-            cart.move_to(user)
+            anonymous_items = cart.items.to_a
             session_manager.create_for(user)
             reload_cart
+            cart.add_items(anonymous_items)
         end
 
         redirect_to '/'

@@ -1,6 +1,7 @@
 module ApplicationHelper
-    def brl(value) 
-        number_to_currency(value, unit: 'R$ ', separator: ",", delimiter: "")
+    
+    def brl(value)
+        Formatting::brl(value)
     end
 
     def friendly_date_time(date)

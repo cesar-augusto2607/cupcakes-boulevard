@@ -1,0 +1,13 @@
+<div class="base-container whatsapp-checkout-container">
+    <h2>Pedido Nº <%= @order.id %> registrado</h2>
+    <ul class="items-list">
+        <% @order.order_items.each do |item| %>
+            <li><%= item.quantity %>x <%= item.name %>: <%= brl(item.price) %></li>
+        <% end %>
+        <li>Total: <%= brl(@order.total) %></li>
+    </ul>
+    <a href="<%= @order.whatsapp_link %>" target="_blank" class="whatsapp-button">
+        Clique para enviar seu pedido
+        <img src="<%= image_url('whatsapp.png') %>" />
+    </a>
+</div>

@@ -1,7 +1,7 @@
 <div class="login-form-container">
     <form method="POST" action="/login" class="card">
         <h1>Acesse sua conta</h1>
-        <input name="email" placeholder="Email" required class="input" />
+        <input name="email" value="<%= params[:email] %>" placeholder="Email" required class="input" />
         <input name="password" placeholder="Senha" type="password" required class="input" />
         <button type="submit" class="btn">Entrar</button>
         <% if flash[:notice] %> <span class="error-message"><%= flash[:notice] %></span> <% end %>

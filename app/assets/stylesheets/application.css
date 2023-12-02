@@ -128,3 +128,7 @@ body {
 .logged-item {
     font-size: 0.8rem;
 }
+
+.logged-item-pointer:hover {
+    cursor: pointer;
+}
