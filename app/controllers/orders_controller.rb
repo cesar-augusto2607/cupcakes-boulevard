@@ -13,6 +13,6 @@ class OrdersController < ApplicationController
     end
 
     def index 
-        @orders = Order.for(current_user).all
+        @orders = Order.for(current_user).order(created_at: :desc).all
     end
 end
